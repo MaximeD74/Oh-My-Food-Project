@@ -1,4 +1,4 @@
-/****** General ******/
+/********* GENERAL *********/
 
 * {
     font-family: roboto;
@@ -43,6 +43,114 @@ a {
 p {
     font-weight: 300;
 }
+
+
+/********* UTILS *********/
+
+/****** Boutons ******/
+
+.button-pink {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    width: 186px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+}
+.button-pink:hover {
+    border-radius: 25px;
+}   
+   
+.button-pink:hover::after {
+    border-radius: 25px;
+    opacity: 1;
+}
+
+.button-pink::after {
+    border-radius: 25px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    z-index: -1;
+    transition: all 250ms;
+}
+
+
+/****** Cards ******/
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    height: 69px;
+}
+
+.card-content {
+    padding: 12px 13.5px 12px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+/****** Coeurs ******/ 
+
+.coeur svg {
+    fill: white;
+    stroke: black;
+    height: 30px;
+    width: 30px;
+}
+
+.restaurants__card__content__text .coeur svg {
+    position: absolute;
+    right: 5%;
+    bottom: 13%;
+}
+
+.coeur svg:hover {
+    animation: fill-heart 1s forwards;
+    transition: all 4s ease-in-out;
+}
+
+@keyframes fill-heart {
+    0% {
+        fill: white;
+    }
+    100% {
+        stroke: none;
+        fill: url(#gradient);
+        fill-opacity: 1;
+    }
+}
+
+/********* PAGE D'ACCUEIL *********/
 
 /****** Loader-Spinner ******/
 
@@ -97,87 +205,12 @@ p {
 }
 
 
-/****** Boutons/Cards ******/
-
-.button-pink {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: 500;
-    width: 186px;
-    height: 50px;
-    border-radius: 25px;
-    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-    font-size: 16px;
-    position: relative;
-    z-index: 1;
-}
-.button-pink:hover {
-    border-radius: 25px;
-}   
-   
-.button-pink:hover::after {
-    border-radius: 25px;
-    opacity: 1;
-}
-
-.button-pink::after {
-    border-radius: 25px;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    z-index: -1;
-    transition: all 250ms;
-}
-
-.card {
-    background: #FFFFFF;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-
-.coeur svg {
-    fill: white;
-    stroke: black;
-    position: absolute;
-    right: 5%;
-    bottom: 13%;
-}
-
-.coeur svg:hover {
-    animation: fill-heart 0.250s forwards ease-in-out;
-}
-
-@keyframes fill-heart {
-    0% {
-        fill: white;
-    }
-    100% {
-        stroke: none;
-        fill: url(#gradient);
-        fill-opacity: 1;
-    }
-}
-
-
-  
-   
-
 /****** Header/Nav ******/
 
 .navbar {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .navbar p {
@@ -185,6 +218,12 @@ p {
     font-size: 30px;
     margin: 0;
     padding: 14px 0px 5px 0px;
+}
+
+.navbar i {
+    position: fixed;
+    top: 3.3%;
+    left: 5%;
 }
 
 /****** Location ******/ 
@@ -318,10 +357,8 @@ p {
 }
 
 .restaurants__cards .card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
     height: 251px;
+    box-shadow: none;
 }
 
 .card img {
@@ -403,8 +440,97 @@ footer .fa-solid {
     padding-left: 24px;
 }
 
+.footer__text a {
+    color: white;
+    font-weight: 300;
+}
 
-/****** MEDIA QUERIES ******/
+/********* PAGES MENUS RESTAURANTS *********/
+
+/****** Image de fond ******/ 
+
+.image-de-fond {
+    min-height: 275px;
+    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/****** Menu ******/ 
+
+.menu {
+    width: 100%;
+    background: #F7F7F7;
+    border-radius: 45px 45px 45px 45px;
+    margin-top: -55px;
+}
+
+.menus-entrees-plats-desserts {
+    display: flex;
+    flex-direction: column;
+    padding: 42px 13px 40px 13px;
+    gap: 40px;
+}
+/*** Titres ***/
+
+/* Titre section menu */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__title {
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    gap: 24px;
+}
+
+.menu h1 {
+    font-family: shrikhand;
+    font-size: 28px;
+    font-weight: 400;
+    padding-left: 17px;
+}
+
+.menu .button-pink {
+    align-self: center;
+    margin-bottom: 40px;
+}
+
+/* Titre parties menus */
+
+.menus__part__title h2 {
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom: 3px solid #99E2D0;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+    width: 40px;
+}
+
+/*** Entrées ***/
+
+.entrees_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/*** Plats ***/ 
+
+/*** Desserts ***/
+
+/*** Bouton commande***/
+
+
+
+
+/********* MEDIA QUERIES *********/
+
+/****** Page d'accueil ******/
 
 @media (min-width: 1024px) {
 
