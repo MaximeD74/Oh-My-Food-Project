@@ -122,7 +122,7 @@ p {
 /****** Coeurs ******/ 
 
 .coeur svg {
-    fill: white;
+    fill: transparent;
     stroke: black;
     height: 30px;
     width: 30px;
@@ -136,12 +136,11 @@ p {
 
 .coeur svg:hover {
     animation: fill-heart 1s forwards;
-    transition: all 4s ease-in-out;
 }
 
 @keyframes fill-heart {
     0% {
-        fill: white;
+        fill: transparent;
     }
     100% {
         stroke: none;
@@ -221,8 +220,8 @@ p {
 }
 
 .navbar i {
-    position: fixed;
-    top: 3.3%;
+    position: absolute;
+    top: 4%;
     left: 5%;
 }
 
@@ -463,6 +462,8 @@ footer .fa-solid {
     background: #F7F7F7;
     border-radius: 45px 45px 45px 45px;
     margin-top: -55px;
+    display: flex;
+    flex-direction: column;
 }
 
 .menus-entrees-plats-desserts {
@@ -470,14 +471,6 @@ footer .fa-solid {
     flex-direction: column;
     padding: 42px 13px 40px 13px;
     gap: 40px;
-}
-/*** Titres ***/
-
-/* Titre section menu */
-
-.menu {
-    display: flex;
-    flex-direction: column;
 }
 
 .menu__title {
@@ -499,8 +492,6 @@ footer .fa-solid {
     margin-bottom: 40px;
 }
 
-/* Titre parties menus */
-
 .menus__part__title h2 {
     font-weight: 300;
     font-size: 16px;
@@ -510,23 +501,11 @@ footer .fa-solid {
     width: 40px;
 }
 
-/*** Entrées ***/
-
-.entrees_cards {
+.section__menu__cards {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
-
-/*** Plats ***/ 
-
-/*** Desserts ***/
-
-/*** Bouton commande***/
-
-
-
 
 /********* MEDIA QUERIES *********/
 
