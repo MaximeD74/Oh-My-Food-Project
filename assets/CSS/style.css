@@ -104,7 +104,6 @@ p {
     flex-direction: column;
     gap: 5px;
     width: 100%;
-    min-width: 70%;
 }
 
 .card-title {
@@ -424,13 +423,13 @@ footer h1 {
     margin-bottom: 16px;
 }
 
-.footer__text {
+footer .footer__text {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
 
-.fa-solid {
+footer .fa-solid {
     position: absolute;
 }
 
@@ -526,6 +525,10 @@ footer h1 {
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
+}
+
+.section__menu__cards .card .card-content {
+    min-width: 70%;
 }
 
 .check-mark-button i { 
