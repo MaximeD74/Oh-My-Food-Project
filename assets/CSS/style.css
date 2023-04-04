@@ -65,12 +65,8 @@ p {
     position: relative;
     z-index: 1;
 }
-.button-pink:hover {
-    border-radius: 25px;
-}   
    
 .button-pink:hover::after {
-    border-radius: 25px;
     opacity: 1;
 }
 
@@ -103,10 +99,12 @@ p {
 }
 
 .card-content {
-    padding: 12px 13.5px 12px 15px;
+    padding: 12px 16px 12px 15px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 100%;
+    min-width: 70%;
 }
 
 .card-title {
@@ -122,7 +120,8 @@ p {
 /****** Coeurs ******/ 
 
 .coeur svg {
-    fill: transparent;
+    fill: url(#gradient);
+    fill-opacity: 0;
     stroke: black;
     height: 30px;
     width: 30px;
@@ -134,17 +133,21 @@ p {
     bottom: 13%;
 }
 
-.coeur svg:hover {
-    animation: fill-heart 1s forwards;
+.coeur svg path:hover {
+    animation: fill-heart 2s forwards;
 }
 
 @keyframes fill-heart {
     0% {
-        fill: transparent;
+        fill-opacity: 0;
+        stroke-opacity: 1;
+    }
+    50% {
+        fill-opacity: 0.5;
+        stroke-opacity: 0;
     }
     100% {
         stroke: none;
-        fill: url(#gradient);
         fill-opacity: 1;
     }
 }
@@ -160,7 +163,7 @@ p {
     inset: 0;
     z-index: 2;
     opacity: 0.9;
-    animation: loader-fade-out 1s 2s forwards ease-out;
+    animation: loader-fade-out 0s 2s forwards;
     transform-origin: top;
 }
 
@@ -215,15 +218,14 @@ p {
 .navbar p {
     font-family: shrikhand;
     font-size: 30px;
-    margin: 0;
     padding: 14px 0px 5px 0px;
 }
 
-.navbar i {
+.navbar a {
     position: absolute;
-    top: 4%;
-    left: 5%;
+    left: 23px;
 }
+
 
 /****** Location ******/ 
 
@@ -288,11 +290,10 @@ p {
 }
 
 .fonctionnement__cards {
-    margin-top: 26px;
+    margin: 26px 20px 0 12px;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-right: 20px;
 }
 
 .fonctionnement__cards__card {
@@ -315,7 +316,7 @@ p {
     color: #F6F6F6;
     font-size: 14.18px;
     position:relative;
-   margin-left: -12.51px;
+    margin-left: -12.51px;
 }
 
 .fonctionnement__cards__card i {
@@ -353,6 +354,12 @@ p {
     margin-top: 30px;
     gap: 18px;
   
+}
+
+.restaurants__cards__row {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .restaurants__cards .card {
@@ -393,7 +400,6 @@ p {
 
 .restaurants__card__content h3 {
     font-size: 18px;
-    
 }
 
 .restaurants__card__content p {
@@ -418,13 +424,13 @@ footer h1 {
     margin-bottom: 16px;
 }
 
-footer .footer__text {
+.footer__text {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
 
-footer .fa-solid {
+.fa-solid {
     position: absolute;
 }
 
@@ -432,7 +438,6 @@ footer .fa-solid {
     display: flex;
     align-items: center;
     gap: 11px;
-    
 }
 
 .icon__text p {
@@ -450,9 +455,24 @@ footer .fa-solid {
 
 .image-de-fond {
     min-height: 275px;
-    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.image-de-fond__gout {
+    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.image-de-fond__francaise {
+    background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.image-de-fond__enchantee {
+    background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.image-de-fond__sens {
+    background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 
 /****** Menu ******/ 
@@ -460,8 +480,8 @@ footer .fa-solid {
 .menu {
     width: 100%;
     background: #F7F7F7;
-    border-radius: 45px 45px 45px 45px;
-    margin-top: -55px;
+    border-radius: 45px 45px 0px 0px;
+    margin-top: -40px;
     display: flex;
     flex-direction: column;
 }
@@ -487,11 +507,6 @@ footer .fa-solid {
     padding-left: 17px;
 }
 
-.menu .button-pink {
-    align-self: center;
-    margin-bottom: 40px;
-}
-
 .menus__part__title h2 {
     font-weight: 300;
     font-size: 16px;
@@ -507,6 +522,85 @@ footer .fa-solid {
     gap: 12px;
 }
 
+.section__menu__cards .card {
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.check-mark-button i { 
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    color: #99E2D0;
+}
+
+.check-mark-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 59px;
+    height: 69px;
+    background: #99E2D0;
+    border-radius: 0px 15px 15px 0px;
+    margin-right: -4rem;
+}
+
+.card-content p, .card-content h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+}
+
+.card:hover > .check-mark-button {
+    animation: check-mark-button__appear 0.5s forwards ease-in;
+}
+
+@keyframes check-mark-button__appear {
+    to {
+        margin-right: 0;
+    }
+}
+
+.entrees {
+    opacity: 0;
+    animation: menus-in 1s forwards ease-out;
+}
+
+.plats {
+    opacity: 0;
+    animation: menus-in 1s 1s forwards ease-out;
+}
+
+.desserts {
+    opacity: 0;
+    animation: menus-in 1s 2s forwards ease-out;
+}
+
+@keyframes menus-in {
+    from {
+        opacity: 0;
+        transform: translatex(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+
+
+
+.menu .button-pink {
+    align-self: center;
+    margin-bottom: 40px;
+}
+
 /********* MEDIA QUERIES *********/
 
 /****** Page d'accueil ******/
@@ -514,9 +608,10 @@ footer .fa-solid {
 @media (min-width: 1024px) {
 
     /**** Navbar ****/
-
+    
     .navbar p {
         font-size: 37px;
+        padding: 30px 0 30px 0;
     }
 
 
@@ -563,19 +658,25 @@ footer .fa-solid {
     /****** Restaurants ******/ 
 
     .restaurants {
-        padding-top: 47px;
-        padding-bottom: 82px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         padding-right: 10%;
         padding-left: 10%;
     }
 
     .restaurants__cards {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .restaurants__cards__row {
+        width: 100%;
         flex-direction: row;
-        gap: 26px;
+        gap: 100px;
     }
 
     .restaurants__cards .card {
-        width: 25%;
+        width: 100%;
     }
 
     .card img {
@@ -588,7 +689,7 @@ footer .fa-solid {
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        padding: 49px 0 38px 0;
+        padding: 57px 0 30px 0;
     }
 
     footer h1 {
@@ -598,6 +699,23 @@ footer .fa-solid {
 
     footer .footer__text {
         flex-direction: row;
-        gap: 40px;
+        gap: 7px;
+    }
+
+    .icon__text__gap {
+        margin-right: 30px;
+    }
+
+/****** Pages Menus ******/
+
+    .menu {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+        align-items: center;
+    }
+
+    .menus-entrees-plats-desserts {
+        width: 60%;
     }
 }
