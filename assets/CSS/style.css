@@ -531,6 +531,10 @@ footer .fa-solid {
     min-width: 70%;
 }
 
+.price {
+    font-weight: 700;
+}
+
 .check-mark-button i { 
     display: flex;
     align-items:center;
@@ -564,6 +568,16 @@ footer .fa-solid {
     animation: check-mark-button__appear 0.5s forwards ease-in;
 }
 
+.card:hover > .check-mark-button i {
+    animation: check-mark-button__rotate 0.8s ease-in-out;
+}
+
+@keyframes check-mark-button__rotate {
+   to {
+        transform: rotate(-360deg);
+    }
+}
+
 @keyframes check-mark-button__appear {
     to {
         margin-right: 0;
@@ -577,22 +591,22 @@ footer .fa-solid {
 
 .plats {
     opacity: 0;
-    animation: menus-in 1s 1s forwards ease-out;
+    animation: menus-in 1s 0.5s forwards ease-out;
 }
 
 .desserts {
     opacity: 0;
-    animation: menus-in 1s 2s forwards ease-out;
+    animation: menus-in 1s 1s forwards ease-out;
 }
 
 @keyframes menus-in {
     from {
         opacity: 0;
-        transform: translatex(-100%);
+        transform: translatey(-20%);
     }
     to {
         opacity: 1;
-        transform: translatex(0);
+        transform: translatey(0);
     }
 }
 
