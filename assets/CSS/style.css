@@ -1,5 +1,3 @@
-@import url(https://github.com/MaximeD74/Oh-My-Food-Project/blob/main/assets/CSS/style.css);
-
 /********* GENERAL *********/
 
 * {
@@ -135,7 +133,7 @@ p {
 }
 
 .coeur svg path:hover {
-    animation: fill-heart 2s forwards;
+    animation: fill-heart 1s forwards;
 }
 
 @keyframes fill-heart {
